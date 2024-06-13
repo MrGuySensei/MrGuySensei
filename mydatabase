@@ -1,0 +1,112 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Jun 12, 2024 at 03:12 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.0.30
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `mydatabase`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `book_information`
+--
+
+CREATE TABLE `book_information` (
+  `book_id` int(11) NOT NULL,
+  `book_title` varchar(80) NOT NULL,
+  `book_author` varchar(30) NOT NULL,
+  `book_published` varchar(20) NOT NULL,
+  `book_status` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `book_information`
+--
+
+INSERT INTO `book_information` (`book_id`, `book_title`, `book_author`, `book_published`, `book_status`) VALUES
+(1, 'Harry Potter and The Sorcerer\'s Stone', 'J.K. Rowling', 'June 27, 1997', 'Available'),
+(2, 'harry potter and the chamber of secrets', 'J.K. Rowling', 'July 2, 1998', 'Available'),
+(3, 'One Piece', 'Eichiro Oda', 'March 12, 1980', 'Available'),
+(4, 'Ralph\'s Amazing Adventure', 'Ralph Romeo', 'June 10, 2024', 'Available');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_information`
+--
+
+CREATE TABLE `user_information` (
+  `user_idno` int(10) NOT NULL,
+  `user_fname` varchar(30) NOT NULL,
+  `user_lname` varchar(30) NOT NULL,
+  `user_name` varchar(60) NOT NULL,
+  `user_password` varchar(50) NOT NULL,
+  `birthdate` varchar(10) NOT NULL,
+  `address` varchar(30) NOT NULL,
+  `cell_number` varchar(15) NOT NULL,
+  `email_address` varchar(60) NOT NULL,
+  `user_type` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `user_information`
+--
+
+INSERT INTO `user_information` (`user_idno`, `user_fname`, `user_lname`, `user_name`, `user_password`, `birthdate`, `address`, `cell_number`, `email_address`, `user_type`) VALUES
+(1, 'Marc Jose', 'Caballo', 'admin', 'admin', '10/19/2003', 'Osmena Extension', '09282218499', 'mzkiecabz@gmail.com', 'Admin'),
+(7, 'Ralph Martin', 'Romeo', 'Ralph', '1234', '01/01/2001', 'Nazareth', '09123456781', 'Ralph@gmail.com', 'Staff'),
+(8, 'reven', 'bejiga', 'reven', '1234', '10/10/2000', 'El Salvador', '09123456789', 'reven@gmail.com', 'User'),
+(9, 'Mathew', 'Polinar', 'mat', '1234', '10/10/2003', 'Brgy. 18', '09123456789', '123@gmail.com', 'User');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `book_information`
+--
+ALTER TABLE `book_information`
+  ADD PRIMARY KEY (`book_id`);
+
+--
+-- Indexes for table `user_information`
+--
+ALTER TABLE `user_information`
+  ADD PRIMARY KEY (`user_idno`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `book_information`
+--
+ALTER TABLE `book_information`
+  MODIFY `book_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `user_information`
+--
+ALTER TABLE `user_information`
+  MODIFY `user_idno` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
